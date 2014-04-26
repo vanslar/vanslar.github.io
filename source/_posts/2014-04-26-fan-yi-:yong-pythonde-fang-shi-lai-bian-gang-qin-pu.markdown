@@ -11,7 +11,7 @@ categories: 渣翻译
 这篇文章我利用傅里叶变换来恢复已经被人遗忘的Gershwin钢琴谱。
 
 钢琴卷(Piano Roll)是流行于1950s的可以放进沙龙机械钢琴的穿孔纸卷，有数千曲目（其中一些出自爵士名家）仅以钢琴卷的形式保存发表。
-
+<!--more-->
 这是George Gershwin在20岁时创作的[Limehouse Nights(~1918)](https://www.youtube.com/watch?feature=player_embedded&v=VjkS-XHScXU>)视频。这是很酷的公开曲面，而且我也想演奏它，但是如同其他钢琴卷一样，这个曲目没有乐谱。
 
 幸运的是，有人录制了这首曲目的[钢琴卷](https://www.youtube.com/watch?feature=player_embedded&v=wMsEbYCh7yY)视频。
