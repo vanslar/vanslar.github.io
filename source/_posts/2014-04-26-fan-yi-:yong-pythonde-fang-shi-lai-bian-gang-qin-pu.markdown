@@ -1,13 +1,14 @@
 ---
 layout: post
-title: "翻译：用python的方式来编钢琴谱"
+title: "用python翻译钢琴卷"
 date: 2014-04-26 15:02
 comments: true
 categories: 渣翻译
 ---
 
-#用python翻译钢琴卷
--------------------
+
+原文：http://zulko.github.io/blog/2014/02/12/transcribing-piano-rolls/#final_result
+
 这篇文章我利用傅里叶变换来恢复已经被人遗忘的Gershwin钢琴谱。
 
 钢琴卷(Piano Roll)是流行于1950s的可以放进沙龙机械钢琴的穿孔纸卷，有数千曲目（其中一些出自爵士名家）仅以钢琴卷的形式保存发表。
