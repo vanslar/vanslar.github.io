@@ -12,11 +12,9 @@ categories: 渣翻译
 
 钢琴卷(Piano Roll)是流行于1950s的可以放进沙龙机械钢琴的穿孔纸卷，有数千曲目（其中一些出自爵士名家）仅以钢琴卷的形式保存发表。
 <!--more-->
-这是George Gershwin在20岁时创作的[Limehouse Nights(~1918)](https://www.youtube.com/watch?feature=player_embedded&v=VjkS-XHScXU>)视频。
+George Gershwin在20岁时创作了[Limehouse Nights(~1918)](https://www.youtube.com/watch?feature=player_embedded&v=VjkS-XHScXU视频)。这是很酷的公开曲面，而且我也想演奏它，但是如同其他钢琴卷一样，这个曲目没有乐谱。
 
-这是很酷的公开曲面，而且我也想演奏它，但是如同其他钢琴卷一样，这个曲目没有乐谱。
-
-幸运的是，有人录制了这首曲目的[钢琴卷](https://www.youtube.com/watch?feature=player_embedded&v=wMsEbYCh7yY)视频。
+幸运的是，有人录制了这首曲目的视频[钢琴卷](https://www.youtube.com/watch?feature=player_embedded&v=wMsEbYCyY)视频。
 
 在该博文里，我会利用很少的python代码将视频转换为乐谱。文章最后提供了乐谱，还有实现该功能的Python包(同样可用于MIDI文件的转换)
 
@@ -46,6 +44,4 @@ categories: 渣翻译
                        for frame in video.iter_frames()])
 
 		imshow( roll_picture ) # display the obtained picture	
-![](http://zulko.github.io/images/rolls_transcription/roll_RGB.jpeg)
-
-从图中我们可以看到按列排列的孔洞
+![](http://zulko.github.io/images/rolls_transcription/roll_RGB.排列的孔洞
