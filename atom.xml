@@ -4,7 +4,7 @@
   <title><![CDATA[path]]></title>
   <link href="http://vanslar.github.io/atom.xml" rel="self"/>
   <link href="http://vanslar.github.io/"/>
-  <updated>2013-09-11T20:55:51+08:00</updated>
+  <updated>2014-04-26T19:09:20+08:00</updated>
   <id>http://vanslar.github.io/</id>
   <author>
     <name><![CDATA[vansar]]></name>
@@ -12,6 +12,64 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[翻译：用python的方式来编钢琴谱]]></title>
+    <link href="http://vanslar.github.io/blog/2014/04/26/fan-yi-%3Ayong-pythonde-fang-shi-lai-bian-gang-qin-pu/"/>
+    <updated>2014-04-26T15:02:00+08:00</updated>
+    <id>http://vanslar.github.io/blog/2014/04/26/fan-yi-:yong-pythonde-fang-shi-lai-bian-gang-qin-pu</id>
+    <content type="html"><![CDATA[<h1>用python翻译钢琴卷</h1>
+
+<hr />
+
+<p>这篇文章我利用傅里叶变换来恢复已经被人遗忘的Gershwin钢琴谱。</p>
+
+<p>钢琴卷(Piano Roll)是流行于1950s的可以放进沙龙机械钢琴的穿孔纸卷，有数千曲目（其中一些出自爵士名家）仅以钢琴卷的形式保存发表。</p>
+
+<p>这是George Gershwin在20岁时创作的<a href="https://www.youtube.com/watch?feature=player_embedded&amp;v=VjkS-XHScXU>&#8220;>Limehouse Nights(~1918)</a>视频。这是很酷的公开曲面，而且我也想演奏它，但是如同其他钢琴卷一样，这个曲目没有乐谱。</p>
+
+<p>幸运的是，有人录制了这首曲目的<a href="https://www.youtube.com/watch?feature=player_embedded&amp;v=wMsEbYCh7yY">钢琴卷</a>视频。</p>
+
+<p>在该博文里，我会利用很少的python代码将视频转换为乐谱。文章最后提供了乐谱，还有实现该功能的Python包(同样可用于MIDI文件的转换)</p>
+
+<hr />
+
+<h2>下载视频</h2>
+
+<p>你可以用在终端用<a href="http://zulko.github.io/blog/2014/02/12/transcribing-piano-rolls/">youtube-dl</a>从youtube下载视频</p>
+
+<pre><code>youtube-dl wMsEbYCh7yY -o limehouse_nights.mp4
+</code></pre>
+
+<hr />
+
+<h2>Step 1: 分割钢琴卷</h2>
+
+<p>在视频的每帧都提供了一个很好的用于定位的像素线：
+<img src="http://zulko.github.io/images/rolls_transcription/watched_line.jpeg" alt="分割线" /></p>
+
+<p>从视频的每帧图片中将这条线提取并堆叠在一起，我们就能得到钢琴卷的扫描图片。</p>
+
+<pre><code>    # Required Python modules
+    from moviepy.editor import VideoFileClip # for video processing
+    from pylab import * # for mathematics/plotting
+
+    # load the video, keep the clip between t=2s and t= 30s
+    video = VideoFileClip('./limehouse_nights.mp4').subclip(2,30)
+
+
+    # extract the focus lines in the different frames, stack them.
+    roll_picture = vstack([frame[[156],58:478]
+                   for frame in video.iter_frames()])
+
+    imshow( roll_picture ) # display the obtained picture   
+</code></pre>
+
+<p><img src="http://zulko.github.io/images/rolls_transcription/roll_RGB.jpeg" alt="" /></p>
+
+<p>从图中我们可以看到按列排列的孔洞</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Markdown编辑器Mou说明]]></title>
@@ -41,9 +99,12 @@ Like, seriously, a <em>LOT</em> of text</strong></p>
 
 <blockquote><p>Right angle brackets &gt; are used for block quotes.</p></blockquote>
 
+<!-- more -->
+
+
 <h4>Links and Email</h4>
 
-<p>An email <a href="&#109;&#x61;&#105;&#108;&#x74;&#111;&#x3a;&#101;&#120;&#97;&#109;&#112;&#108;&#101;&#x40;&#x65;&#x78;&#97;&#x6d;&#x70;&#108;&#101;&#x2e;&#99;&#x6f;&#x6d;">&#x65;&#x78;&#97;&#x6d;&#x70;&#108;&#101;&#x40;&#x65;&#x78;&#97;&#109;&#x70;&#108;&#101;&#46;&#99;&#111;&#109;</a> link.</p>
+<p>An email <a href="&#x6d;&#97;&#105;&#108;&#116;&#111;&#x3a;&#x65;&#x78;&#x61;&#109;&#112;&#108;&#101;&#64;&#101;&#x78;&#97;&#x6d;&#x70;&#108;&#101;&#x2e;&#x63;&#x6f;&#109;">&#x65;&#120;&#97;&#x6d;&#112;&#x6c;&#101;&#64;&#x65;&#120;&#97;&#109;&#x70;&#108;&#x65;&#x2e;&#99;&#x6f;&#109;</a> link.</p>
 
 <p>Simple inline link <a href="http://chenluois.com">http://chenluois.com</a>, another inline link <a href="http://smallerapp.com">Smaller</a>, one more inline link with title <a href="http://resizesafari.com" title="a Safari extension">Resize</a>.</p>
 
