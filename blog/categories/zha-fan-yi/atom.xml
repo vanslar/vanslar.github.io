@@ -4,7 +4,7 @@
   <title><![CDATA[Category: 渣翻译 | path]]></title>
   <link href="http://vanslar.github.io/blog/categories/zha-fan-yi/atom.xml" rel="self"/>
   <link href="http://vanslar.github.io/"/>
-  <updated>2014-04-26T19:44:05+08:00</updated>
+  <updated>2014-04-26T19:58:53+08:00</updated>
   <id>http://vanslar.github.io/</id>
   <author>
     <name><![CDATA[vansar]]></name>
@@ -14,13 +14,11 @@
 
   
   <entry>
-    <title type="html"><![CDATA[翻译：用python的方式来编钢琴谱]]></title>
+    <title type="html"><![CDATA[用python翻译钢琴卷]]></title>
     <link href="http://vanslar.github.io/blog/2014/04/26/fan-yi-%3Ayong-pythonde-fang-shi-lai-bian-gang-qin-pu/"/>
     <updated>2014-04-26T15:02:00+08:00</updated>
     <id>http://vanslar.github.io/blog/2014/04/26/fan-yi-:yong-pythonde-fang-shi-lai-bian-gang-qin-pu</id>
-    <content type="html"><![CDATA[<h1>用python翻译钢琴卷</h1>
-
-<hr />
+    <content type="html"><![CDATA[<p>原文：<a href="http://zulko.github.io/blog/2014/02/12/transcribing-piano-rolls/#final_result">http://zulko.github.io/blog/2014/02/12/transcribing-piano-rolls/#final_result</a></p>
 
 <p>这篇文章我利用傅里叶变换来恢复已经被人遗忘的Gershwin钢琴谱。</p>
 
